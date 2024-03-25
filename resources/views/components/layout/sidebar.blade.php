@@ -175,12 +175,14 @@
                                         Settings
                                     </a>
                                     <div class="dropdown-menu">
-                                        <a href="./cards.html" class="dropdown-item">
-                                            Study Level Categories
-                                        </a>
-                                        <a href="./card-actions.html" class="dropdown-item">
-                                            Study Level
-                                        </a>
+                                        @if (auth()->user()->is_developer)                                          )
+                                            <a href="./cards.html" class="dropdown-item">
+                                                Study Level Categories
+                                            </a>
+                                            <a href="./card-actions.html" class="dropdown-item">
+                                                Study Level
+                                            </a>
+                                        @endif
                                         <a href="./cards-masonry.html" class="dropdown-item">
                                             Periods
                                         </a>

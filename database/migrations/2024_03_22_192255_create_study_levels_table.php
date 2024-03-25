@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('study_levels', function (Blueprint $table) {
             $table->id();
+            $table->string('name_en');
+            $table->string('name_ar');
+            $table->string('code');
+            $table->boolean('is_active');
+            $table->boolean('has_plan')->default(false);
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
         });
     }

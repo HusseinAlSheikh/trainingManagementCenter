@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('study_level_categories', function (Blueprint $table) {
-            $table->id();
-            $table->string('name_en');
-            $table->string('name_ar');
-            $table->string('code');
-            $table->boolean('is_active');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('is_developer')->default(false);
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('study_level_categories');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('is_developer');
+        });
     }
 };
