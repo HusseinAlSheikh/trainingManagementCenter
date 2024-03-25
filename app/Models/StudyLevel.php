@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class StudyLevel extends Model
 {
     use HasFactory;
+
+
+    function studyLevelCategory(){
+        return $this->belongsTo(StudyLevelCategory::class);
+    }
+
 }

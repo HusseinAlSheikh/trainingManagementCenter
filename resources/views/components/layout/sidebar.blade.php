@@ -176,10 +176,10 @@
                                     </a>
                                     <div class="dropdown-menu">
                                         @if (auth()->user()->is_developer)                                          )
-                                            <a href="./cards.html" class="dropdown-item">
+                                            <a href="{{route('studyLevelCategory.index')}}" class="dropdown-item">
                                                 Study Level Categories
                                             </a>
-                                            <a href="./card-actions.html" class="dropdown-item">
+                                            <a href="{{route('studyLevel.index')}}" class="dropdown-item">
                                                 Study Level
                                             </a>
                                         @endif

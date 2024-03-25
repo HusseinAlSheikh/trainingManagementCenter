@@ -14,7 +14,10 @@ class StudyLevelCategoryController extends Controller
      */
     public function index()
     {
-        //
+            return view('studyLevelCategory.index',[
+                'categories' => StudyLevelCategory::all(),
+            ]);
+
     }
 
     /**

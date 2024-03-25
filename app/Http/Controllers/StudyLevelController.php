@@ -14,7 +14,8 @@ class StudyLevelController extends Controller
      */
     public function index()
     {
-        //
+        $studyLevels = StudyLevel::get()->with('studyLevelCategory');
+        dd($studyLevels);
     }
 
     /**

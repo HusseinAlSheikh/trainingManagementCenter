@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\StudyLevelCategoryController;
+use App\Http\Controllers\StudyLevelController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,4 +37,11 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 });
 
+
+
+Route::middleware(['auth','isDeveloper'])->group(function () {
+    Route::get('/studyLevelCategory',[StudyLevelCategoryController::class ,'index'])->name('studyLevelCategory.index');
+    //---------
+    Route::get('/studyLevel',[StudyLevelController::class ,'index'])->name('studyLevel.index');
+});
 
