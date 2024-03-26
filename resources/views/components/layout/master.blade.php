@@ -59,8 +59,10 @@
         <!-- Page body -->
         <div class="page-body">
           <div class="container-xl">
-            <div class="row row-deck row-cards">
+            <div class="card">
+              <div class="card-body">
               {{$slot}}
+             </div>
             </div>
           </div>
         </div>
@@ -69,7 +71,7 @@
     </div>
 
     <!-- Libs JS -->
-
+    <script src="{{ asset('libs/list.js/dist/list.min.js') }}" defer></script>
     <!-- Tabler Core -->
     <script src="{{ asset('js/tabler.min.js') }}" defer></script>
     <script src="{{ asset('js/demo.min.js') }}" defer></script>
