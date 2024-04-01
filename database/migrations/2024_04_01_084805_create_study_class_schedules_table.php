@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('part_types', function (Blueprint $table) {
+        Schema::create('study_class_schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('name_ar');
-            $table->string('name_en');
-            $table->string('type_code');
-            $table->date('start_date');
-            $table->date('end_date');
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('part_types');
+        Schema::dropIfExists('study_class_schedules');
     }
 };

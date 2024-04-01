@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('days', function (Blueprint $table) {
             $table->id();
+            $table->string('name_ar');
+            $table->string('name_en');
+            $table->boolean('attend_day')->default(true);
+            $table->smallInteger('day_order');
+            $table->string('short_name_ar');
+            $table->string('short_name_en');
             $table->timestamps();
         });
     }

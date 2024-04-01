@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Course;
+use App\Models\Instructor;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,13 +15,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('part_types', function (Blueprint $table) {
+        Schema::create('instructor_courses', function (Blueprint $table) {
             $table->id();
-            $table->string('name_ar');
-            $table->string('name_en');
-            $table->string('type_code');
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->foreignIdFor(Instructor::class);
+            $table->foreignIdFor(Course::class);
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('part_types');
+        Schema::dropIfExists('instructor_courses');
     }
 };

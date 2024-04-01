@@ -1,8 +1,11 @@
 <?php
 
+use App\Models\Instructor;
+use App\Models\StudyClass;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use PhpParser\Builder\Class_;
 
 return new class extends Migration
 {
@@ -13,13 +16,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('part_types', function (Blueprint $table) {
+        Schema::create('instructor_classes', function (Blueprint $table) {
             $table->id();
-            $table->string('name_ar');
-            $table->string('name_en');
-            $table->string('type_code');
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->foreignIdFor(Instructor::class);
+            $table->foreignIdFor(StudyClass::class);
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('part_types');
+        Schema::dropIfExists('instructor_classes');
     }
 };
