@@ -14,6 +14,14 @@ class PeriodSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $periods = [
+            [
+                'name_ar' => 'الفترة الاولى' ,
+                'name_en' => 'First Period' ,
+                'is_attend' => true ,
+                'start_time' => '' ,
+                'end_time' => '' ,
+            ],
+        ] ;
     }
 }
